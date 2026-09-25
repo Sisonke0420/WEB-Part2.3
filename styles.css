@@ -1,18 +1,18 @@
 :root {
-  --paper: #f5f2eb;
-  --ink: #1d2821;
-  --muted: #687269;
-  --line: #d9d8cc;
-  --accent: #d8663e;
-  --accent-dark: #b74c2d;
-  --sage: #b9c8ad;
-  --nav: rgba(245, 242, 235, 0.88);
+  --paper: #ffffff;
+  --ink: #000000;
+  --muted: #1e1e1e;
+  --line: #d9d9d9;
+  --accent: #ff6b35;
+  --accent-dark: #e65a2d;
+  --sage: #d9d9d9;
+  --nav: rgba(255, 255, 255, 0.9);
   --background: var(--paper);
   --foreground: var(--ink);
   --card: var(--paper);
   --card-foreground: var(--ink);
   --primary: var(--accent);
-  --primary-foreground: #fff;
+  --primary-foreground: #ffffff;
   --secondary: var(--sage);
   --secondary-foreground: var(--ink);
   --muted-foreground: var(--muted);
@@ -21,20 +21,20 @@
   --radius: 0.5rem;
 }
 [data-theme="dark"] {
-  --paper: #18201b;
-  --ink: #f5f2eb;
-  --muted: #b2bbae;
-  --line: #3b453d;
-  --accent: #ed8860;
-  --accent-dark: #ffab84;
-  --sage: #465744;
-  --nav: rgba(24, 32, 27, 0.9);
+  --paper: #1e1e1e;
+  --ink: #ffffff;
+  --muted: #d9d9d9;
+  --line: #3a3a3a;
+  --accent: #ff6b35;
+  --accent-dark: #ff8a5a;
+  --sage: #2d2d2d;
+  --nav: rgba(30, 30, 30, 0.9);
   --background: var(--paper);
   --foreground: var(--ink);
   --card: var(--paper);
   --card-foreground: var(--ink);
   --primary: var(--accent);
-  --primary-foreground: #18201b;
+  --primary-foreground: #ffffff;
   --secondary: var(--sage);
   --secondary-foreground: var(--ink);
   --muted-foreground: var(--muted);

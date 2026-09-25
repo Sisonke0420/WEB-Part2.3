@@ -5,6 +5,10 @@ const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".nav-links");
 const revealItems = document.querySelectorAll(".reveal");
 
+if (menuButton) {
+  menuButton.textContent = "Menu";
+}
+
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
   localStorage.setItem("fsar-theme", theme);
