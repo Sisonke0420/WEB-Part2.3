@@ -50,7 +50,11 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(255, 107, 53, 0.1), transparent 28%),
+    radial-gradient(
+      circle at top left,
+      rgba(255, 107, 53, 0.1),
+      transparent 28%
+    ),
     linear-gradient(180deg, var(--background) 0%, #f8f7f4 100%);
   color: var(--foreground);
   font-family: "Red Hat Display", sans-serif;
@@ -60,7 +64,11 @@ body {
 }
 [data-theme="dark"] body {
   background:
-    radial-gradient(circle at top left, rgba(255, 107, 53, 0.16), transparent 28%),
+    radial-gradient(
+      circle at top left,
+      rgba(255, 107, 53, 0.16),
+      transparent 28%
+    ),
     linear-gradient(180deg, var(--background) 0%, #121212 100%);
 }
 a {
@@ -387,7 +395,12 @@ h2 em,
   gap: 28px;
   margin-bottom: 110px;
   padding: clamp(24px, 4vw, 38px);
-  background: linear-gradient(135deg, var(--ink) 0%, #1e1e1e 48%, var(--accent) 140%);
+  background: linear-gradient(
+    135deg,
+    var(--ink) 0%,
+    #1e1e1e 48%,
+    var(--accent) 140%
+  );
   border-radius: 30px;
   color: var(--paper);
 }
