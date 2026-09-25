@@ -4,9 +4,23 @@ const themeButton = document.querySelector(".theme-toggle");
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".nav-links");
 const revealItems = document.querySelectorAll(".reveal");
+const carouselButtons = document.querySelectorAll(".carousel-button");
+const carouselSlides = document.querySelectorAll(".carousel-slide");
 
 if (menuButton) {
   menuButton.textContent = "Menu";
+}
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  if (!carouselSlides.length) return;
+
+  currentSlide = (index + carouselSlides.length) % carouselSlides.length;
+
+  carouselSlides.forEach((slide, slideIndex) => {
+    slide.classList.toggle("is-active", slideIndex === currentSlide);
+  });
 }
 
 function setTheme(theme) {
@@ -33,6 +47,17 @@ menuButton.addEventListener("click", () => {
   menuButton.setAttribute("aria-expanded", isOpen);
   menuButton.textContent = isOpen ? "Close" : "Menu";
 });
+
+carouselButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const direction = button.dataset.direction === "next" ? 1 : -1;
+    showSlide(currentSlide + direction);
+  });
+});
+
+setInterval(() => {
+  showSlide(currentSlide + 1);
+}, 5000);
 
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {

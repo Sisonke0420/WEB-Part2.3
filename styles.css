@@ -497,6 +497,109 @@ h2 em,
   min-height: 360px;
   border-radius: 100px 4px 100px 4px;
 }
+.story-carousel {
+  margin-top: 52px;
+  padding: 30px 24px 24px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+}
+[data-theme="dark"] .story-carousel {
+  background: rgba(30, 30, 30, 0.8);
+}
+.carousel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+.carousel-controls {
+  display: flex;
+  gap: 10px;
+}
+.carousel-button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 18px;
+  cursor: pointer;
+}
+.carousel-track {
+  position: relative;
+}
+.carousel-slide {
+  display: none;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.carousel-slide.is-active {
+  display: grid;
+}
+.carousel-slide img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+.carousel-copy {
+  padding: 8px 6px;
+}
+.slide-tag {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.carousel-copy h3 {
+  margin: 0 0 12px;
+  font-family: "Fraunces", serif;
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+.carousel-copy p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 52px;
+}
+.mini-card {
+  padding: 24px 22px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 12px 24px rgba(17, 17, 17, 0.03);
+}
+[data-theme="dark"] .mini-card {
+  background: rgba(30, 30, 30, 0.8);
+}
+.mini-card h3 {
+  margin: 0 0 10px;
+  font-family: "Fraunces", serif;
+  font-size: clamp(26px, 2vw, 34px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+.mini-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.contact-page > .info-grid {
+  grid-column: 1 / -1;
+}
 blockquote {
   margin: 0;
   padding: 27px;
@@ -642,12 +745,16 @@ blockquote cite {
   }
   .home-grid,
   .split-content,
-  .contact-page {
+  .contact-page,
+  .info-grid {
     grid-template-columns: 1fr;
     gap: 35px;
   }
   .home-grid {
     padding-block: 75px 90px;
+  }
+  .info-grid {
+    margin-top: 32px;
   }
   .inner-page {
     padding-top: 135px;
