@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free State Animal Rescue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Red+Hat+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">skip</a>
     <header class="site-nav">
       <a class="brand" href="home.html"
         ><span class="brand-mark">FS</span
@@ -16,11 +23,9 @@
         class="menu-toggle"
         aria-label="Open navigation"
         aria-expanded="false"
-      >
-        Menu
-      </button>
+      ></button>
       <nav class="nav-links" aria-label="Main navigation">
-        <a class="active" href="home.html">Home</a>
+        <a class="active" href="home.html" aria-current="page">Home</a>
         <a href="about.html">Our story</a>
         <a href="services.html">How to help</a>
         <a href="Testimonial.html">Happy tails</a>
@@ -37,13 +42,13 @@
       </button>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero page-wrap reveal">
         <div class="hero-copy">
           <p class="eyebrow">A second chance starts here</p>
           <h1>Every animal deserves a <em>soft place</em> to land.</h1>
           <p class="lede">
-            We rescue, restore, and rehome animals across the Free State, giving
+            We rescue, restore, and home animals across the Free State, giving
             each one the time, care, and family they need to flourish.
           </p>
           <div class="hero-actions">
@@ -58,11 +63,14 @@
           <img
             src="assets/img1.webp"
             alt="A rescued dog looking toward the camera"
+            width="900"
+            height="700"
+            fetchpriority="high"
           /><span class="image-note">Rescue is a team sport.</span>
         </div>
       </section>
 
-      <section class="intro-band reveal">
+      <section class="intro-band reveal" aria-label="Our impact">
         <div class="page-wrap stat-row">
           <div><strong>1,240+</strong><span>animals helped</span></div>
           <div><strong>18</strong><span>years of care</span></div>
@@ -83,7 +91,7 @@
             that every animal has a story still being written.
           </p>
           <a class="text-link" href="about.html"
-            >Read our story <span>→</span></a
+            >Read our story <span aria-hidden="true">→</span></a
           >
         </div>
       </section>
