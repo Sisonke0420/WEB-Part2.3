@@ -38,12 +38,13 @@
 
 ## Assets and tooling
 
-9. Local project assets  
+9. Local project assets
    - `assets/` folder for photography and brand visuals used in the site.
 
 10. VS Code Live Server  
-   https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
-   - Recommended for previewing the static site while developing.
+    https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+- Recommended for previewing the static site while developing.
 
 ## Notes
 

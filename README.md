@@ -5,6 +5,7 @@ A responsive multi-page website for a fictional animal rescue organisation in th
 ## Project overview
 
 This project includes a landing page and supporting pages for:
+
 - Home
 - Our story
 - How to help
