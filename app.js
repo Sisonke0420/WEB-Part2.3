@@ -106,7 +106,7 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
 
   window.setTimeout(
     () => brandSplash.remove(),
-    prefersReducedMotion ? 600 : 6000,
+    prefersReducedMotion ? 600 : 3000,
   );
 }
 
