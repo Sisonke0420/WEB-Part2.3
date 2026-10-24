@@ -64,12 +64,19 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
   const brandSplash = document.createElement("div");
   brandSplash.className = "brand-splash";
   brandSplash.setAttribute("aria-hidden", "true");
-  brandSplash.innerHTML = `
-    <img class="brand-splash-image" src="${splashImage}" alt="" />
-    <div class="brand-splash-text">
-      Free State<br /><strong>Animal Rescue</strong>
-    </div>
-  `;
+  const splashImageElement = document.createElement("img");
+  splashImageElement.className = "brand-splash-image";
+  splashImageElement.src = splashImage;
+  splashImageElement.alt = "";
+  splashImageElement.fetchPriority = "high";
+
+  const splashText = document.createElement("div");
+  splashText.className = "brand-splash-text";
+  const splashName = document.createElement("strong");
+  splashName.textContent = "Animal Rescue";
+  splashText.append("Free State", document.createElement("br"), splashName);
+
+  brandSplash.append(splashImageElement, splashText);
   document.body.append(brandSplash);
 
   window.setTimeout(

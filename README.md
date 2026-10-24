@@ -28,10 +28,22 @@ The site uses semantic HTML, modern CSS styling, and a small JavaScript enhancem
 - Each page has a unique title and meta description, plus Open Graph and
   summary-card metadata for social sharing.
 - The document language is set to South African English (`en-ZA`).
-- Before deployment, add canonical URLs and an XML sitemap using the
-  production domain, then verify the site in Google Search Console.
+- Replace `example.com` in `robots.txt` and `sitemap.xml` with the production
+  domain before deployment. Publish both files at the site root, then submit
+  the sitemap in Google Search Console.
 - Replace fictional organisation details, statistics, and stories with
   verified information before publishing.
+
+## Performance and security
+
+- Below-the-fold photographs use lazy loading and asynchronous decoding; the
+  homepage hero and first splash photo are prioritised.
+- `_headers` configures a restrictive Content Security Policy and common
+  browser security headers for static hosts that support the Netlify/Cloudflare
+  Pages `_headers` format. Confirm the deployed response headers with the host.
+- Use HTTPS in production. Configure a redirect from the host's default URL
+  to the chosen canonical domain before adding canonical tags or submitting
+  the sitemap.
 
 ## Project structure
 
@@ -42,6 +54,8 @@ The site uses semantic HTML, modern CSS styling, and a small JavaScript enhancem
 - `contact.html` — contact information and support details
 - `styles.css` — shared styling and layout
 - `app.js` — theme toggle, menu toggle, and interactive effects
+- `robots.txt` and `sitemap.xml` — crawler access and page discovery
+- `_headers` — security and cache headers for compatible static hosts
 - `assets/` — images and other static media
 - `references.md` — supporting references and inspiration list
 
