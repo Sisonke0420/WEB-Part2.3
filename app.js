@@ -5,7 +5,7 @@ const prefersReducedMotion = window.matchMedia(
 ).matches;
 const themeButton = document.querySelector(".theme-toggle");
 const menuButton = document.querySelector(".menu-toggle");
-const navigation = document.querySelector(".nav-links");
+const navLinks = document.querySelector(".nav-links");
 const revealItems = document.querySelectorAll(".reveal");
 const carouselButtons = document.querySelectorAll(".carousel-button");
 const carouselSlides = document.querySelectorAll(".carousel-slide");
@@ -92,7 +92,7 @@ themeButton.addEventListener("click", () => {
 });
 
 menuButton.addEventListener("click", () => {
-  const isOpen = navigation.classList.toggle("open");
+  const isOpen = navLinks.classList.toggle("open");
   // Reflect the expanded state for assistive technology.
   menuButton.setAttribute("aria-expanded", isOpen);
   menuButton.textContent = isOpen ? "Close" : "Menu";

@@ -31,7 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Red+Hat+Display:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -43,6 +43,7 @@
         ><span>Free State<br /><strong>Animal Rescue</strong></span></a
       ><button
         class="menu-toggle"
+        type="button"
         aria-label="Open navigation"
         aria-expanded="false"
       >
@@ -92,8 +93,13 @@
       >
         <div class="carousel-header">
           <p class="eyebrow">More happy tails</p>
-          <div class="carousel-controls" aria-label="Carousel controls">
+          <div
+            class="carousel-controls"
+            role="group"
+            aria-label="Carousel controls"
+          >
             <button
+              type="button"
               class="carousel-button"
               data-direction="prev"
               aria-label="Previous slide"
@@ -101,6 +107,7 @@
               ←
             </button>
             <button
+              type="button"
               class="carousel-button"
               data-direction="next"
               aria-label="Next slide"

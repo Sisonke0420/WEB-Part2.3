@@ -63,6 +63,13 @@ The site uses semantic HTML, modern CSS styling, and a small JavaScript enhancem
 
 Open `home.html` in a browser, or use a local preview extension such as Live Server in VS Code.
 
+## Validation
+
+Install the development tools with `npm install`, then run `npm run validate` to
+check all HTML pages with html-validate and check `app.js` with ESLint. Run
+`npm run validate:html` or `npm run validate:js` to run either check separately.
+GitHub Actions runs the combined validation on every push and pull request.
+
 ## References
 
 See [references.md](references.md) for the design, technical, and learning references used for this project.

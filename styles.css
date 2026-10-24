@@ -57,7 +57,7 @@ body {
     ),
     linear-gradient(180deg, var(--background) 0%, #f8f7f4 100%);
   color: var(--foreground);
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "DM Sans", sans-serif;
   transition:
     background 0.25s ease,
     color 0.25s ease;
@@ -118,7 +118,7 @@ a {
   border-radius: 50%;
   background: var(--accent);
   color: #fff;
-  font-family: "Fraunces", serif;
+  font-family: "Manrope", sans-serif;
   font-size: 12px;
   letter-spacing: -0.08em;
 }
@@ -193,7 +193,7 @@ p {
 h1,
 h2,
 blockquote {
-  font-family: "Fraunces", serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 500;
   letter-spacing: -0.045em;
 }
@@ -293,7 +293,7 @@ h2 em,
   padding: 13px 17px;
   background: var(--paper);
   color: var(--ink);
-  font-family: "Fraunces", serif;
+  font-family: "Manrope", sans-serif;
   font-size: 14px;
   transform: rotate(-4deg);
 }
@@ -314,7 +314,7 @@ h2 em,
   border-right: 1px solid var(--line);
 }
 .stat-row strong {
-  font-family: "Fraunces", serif;
+  font-family: "Manrope", sans-serif;
   font-size: 35px;
   font-weight: 500;
 }
@@ -327,7 +327,7 @@ h2 em,
 .stat-row p {
   margin: 0;
   padding-left: 20px;
-  font-family: "Fraunces", serif;
+  font-family: "Manrope", sans-serif;
   font-size: 19px;
   line-height: 1.05;
 }
@@ -378,7 +378,7 @@ h2 em,
 }
 .feature-card h3 {
   margin: 0 0 12px;
-  font-family: "Fraunces", serif;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(26px, 2vw, 34px);
   line-height: 1.1;
   letter-spacing: -0.04em;
@@ -447,7 +447,7 @@ h2 em,
   border-radius: 4px 150px 4px 4px;
 }
 .split-content .lede {
-  font-family: "Fraunces", serif;
+  font-family: "Manrope", sans-serif;
   font-size: 27px;
   line-height: 1.2;
   color: var(--ink);
@@ -559,7 +559,7 @@ h2 em,
 }
 .carousel-copy h3 {
   margin: 0 0 12px;
-  font-family: "Fraunces", serif;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(30px, 3vw, 42px);
   line-height: 1.02;
   letter-spacing: -0.04em;
@@ -587,7 +587,7 @@ h2 em,
 }
 .mini-card h3 {
   margin: 0 0 10px;
-  font-family: "Fraunces", serif;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(26px, 2vw, 34px);
   line-height: 1.08;
   letter-spacing: -0.04em;
@@ -617,6 +617,68 @@ blockquote cite {
   font-size: 11px;
   font-style: normal;
   letter-spacing: 0.04em;
+}
+.feature-card,
+.mini-card,
+.story-carousel,
+blockquote,
+.carousel-slide,
+.service-list article {
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+.feature-card:hover,
+.mini-card:hover,
+.story-carousel:hover,
+blockquote:hover,
+.carousel-slide:hover,
+.service-list article:hover,
+.feature-card:focus-within,
+.mini-card:focus-within,
+.story-carousel:focus-within,
+blockquote:focus-within,
+.carousel-slide:focus-within,
+.service-list article:focus-within {
+  transform: translateY(-4px);
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+  box-shadow: 0 18px 32px rgba(17, 17, 17, 0.16);
+}
+.feature-card:hover p,
+.mini-card:hover p,
+.story-carousel:hover p,
+blockquote:hover cite,
+.carousel-slide:hover p,
+.service-list article:hover p,
+.service-list article:hover span,
+.feature-card:focus-within p,
+.mini-card:focus-within p,
+.story-carousel:focus-within p,
+blockquote:focus-within cite,
+.carousel-slide:focus-within p,
+.service-list article:focus-within p,
+.service-list article:focus-within span {
+  color: var(--paper);
+}
+.feature-card:hover .feature-tag,
+.mini-card:hover .feature-tag,
+.story-carousel:hover .feature-tag,
+.carousel-slide:hover .slide-tag,
+.feature-card:focus-within .feature-tag,
+.mini-card:focus-within .feature-tag,
+.story-carousel:focus-within .feature-tag,
+.carousel-slide:focus-within .slide-tag {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--paper);
+}
+.service-list article:hover .text-link,
+.service-list article:focus-within .text-link {
+  color: var(--paper);
 }
 .contact-page {
   display: grid;
@@ -666,7 +728,7 @@ blockquote cite {
   position: relative;
   z-index: 1;
   color: #fff;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(32px, 7vw, 64px);
   font-weight: 700;
   line-height: 1.05;
