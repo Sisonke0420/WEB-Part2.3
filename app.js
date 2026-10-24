@@ -1,5 +1,8 @@
 const savedTheme = localStorage.getItem("fsar-theme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 const themeButton = document.querySelector(".theme-toggle");
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".nav-links");
@@ -7,12 +10,14 @@ const revealItems = document.querySelectorAll(".reveal");
 const carouselButtons = document.querySelectorAll(".carousel-button");
 const carouselSlides = document.querySelectorAll(".carousel-slide");
 
+// Keep the mobile menu label in its closed state until the visitor opens it.
 if (menuButton) {
   menuButton.textContent = "Menu";
 }
 
 let currentSlide = 0;
 
+// Wrap around at either end so the carousel never reaches a dead end.
 function showSlide(index) {
   if (!carouselSlides.length) return;
 
@@ -23,6 +28,7 @@ function showSlide(index) {
   });
 }
 
+// Apply the selected theme and keep the control's accessible label in sync.
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
   localStorage.setItem("fsar-theme", theme);
@@ -34,7 +40,43 @@ function setTheme(theme) {
     theme === "dark" ? "Light mode" : "Dark mode";
 }
 
+// Prefer the saved choice; otherwise follow the device's colour preference.
 setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+// Show the intro only on the first page opened in this browser tab.
+if (!sessionStorage.getItem("fsar-splash-shown")) {
+  sessionStorage.setItem("fsar-splash-shown", "true");
+
+  const splashImages = Array.from(
+    { length: 12 },
+    (_, index) => `assets/img${index + 1}.webp`,
+  );
+  const previousSplashImage = localStorage.getItem("fsar-splash-image");
+  const availableSplashImages = splashImages.filter(
+    (image) => image !== previousSplashImage,
+  );
+  const splashImage =
+    availableSplashImages[
+      Math.floor(Math.random() * availableSplashImages.length)
+    ];
+  localStorage.setItem("fsar-splash-image", splashImage);
+
+  const brandSplash = document.createElement("div");
+  brandSplash.className = "brand-splash";
+  brandSplash.setAttribute("aria-hidden", "true");
+  brandSplash.innerHTML = `
+    <img class="brand-splash-image" src="${splashImage}" alt="" />
+    <div class="brand-splash-text">
+      Free State<br /><strong>Animal Rescue</strong>
+    </div>
+  `;
+  document.body.append(brandSplash);
+
+  window.setTimeout(
+    () => brandSplash.remove(),
+    prefersReducedMotion ? 600 : 3600,
+  );
+}
 
 themeButton.addEventListener("click", () => {
   setTheme(
@@ -44,6 +86,7 @@ themeButton.addEventListener("click", () => {
 
 menuButton.addEventListener("click", () => {
   const isOpen = navigation.classList.toggle("open");
+  // Reflect the expanded state for assistive technology.
   menuButton.setAttribute("aria-expanded", isOpen);
   menuButton.textContent = isOpen ? "Close" : "Menu";
 });
@@ -55,10 +98,12 @@ carouselButtons.forEach((button) => {
   });
 });
 
+// Automatically advance stories every five seconds.
 setInterval(() => {
   showSlide(currentSlide + 1);
 }, 5000);
 
+// Reveal each section when it enters the viewport, then stop observing it.
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {

@@ -23,6 +23,16 @@ The site uses semantic HTML, modern CSS styling, and a small JavaScript enhancem
 - Story, service, testimonial, and contact sections
 - Simple content-focused design for a non-profit animal rescue brand
 
+## SEO
+
+- Each page has a unique title and meta description, plus Open Graph and
+  summary-card metadata for social sharing.
+- The document language is set to South African English (`en-ZA`).
+- Before deployment, add canonical URLs and an XML sitemap using the
+  production domain, then verify the site in Google Search Console.
+- Replace fictional organisation details, statistics, and stories with
+  verified information before publishing.
+
 ## Project structure
 
 - `home.html` — homepage
