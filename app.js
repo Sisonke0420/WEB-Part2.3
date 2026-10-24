@@ -64,6 +64,7 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
     "assets/978bc179-6991-4a57-9c80-9edee441767c.webp",
     "assets/ddd0ac9e-b99f-4385-9ff8-bd66fe962e2d.webp",
   ];
+  // Avoid showing the same splash photo as the previous browser session.
   const previousSplashImage = localStorage.getItem("fsar-splash-image");
   const availableSplashImages = splashImages.filter(
     (image) => image !== previousSplashImage,
@@ -74,6 +75,7 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
     ];
   localStorage.setItem("fsar-splash-image", splashImage);
 
+  // Create image elements for the splash and prioritize only the chosen photo.
   const brandSplash = document.createElement("div");
   brandSplash.className = "brand-splash";
   brandSplash.setAttribute("aria-hidden", "true");
@@ -104,10 +106,11 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
 
   window.setTimeout(
     () => brandSplash.remove(),
-    prefersReducedMotion ? 600 : 3600,
+    prefersReducedMotion ? 600 : 6000,
   );
 }
 
+// Toggle between the visitor's saved theme and its opposite.
 themeButton.addEventListener("click", () => {
   setTheme(
     document.documentElement.dataset.theme === "dark" ? "light" : "dark",
@@ -116,13 +119,14 @@ themeButton.addEventListener("click", () => {
 
 menuButton.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("open");
-  // Reflect the expanded state for assistive technology.
+  // Keep the button label and accessible state aligned with the menu.
   menuButton.setAttribute("aria-expanded", isOpen);
   menuButton.textContent = isOpen ? "Close" : "Menu";
 });
 
 carouselButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    // The control's direction determines whether to advance or go back.
     const direction = button.dataset.direction === "next" ? 1 : -1;
     showSlide(currentSlide + direction);
   });
@@ -133,7 +137,7 @@ setInterval(() => {
   showSlide(currentSlide + 1);
 }, 5000);
 
-// Reveal each section when it enters the viewport, then stop observing it.
+// Reveal sections as they enter view, then unobserve them to avoid repeat work.
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {
