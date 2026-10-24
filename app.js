@@ -48,17 +48,8 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
   sessionStorage.setItem("fsar-splash-shown", "true");
 
   const splashImages = [
-    "assets/0c654706-576b-448f-b944-b1dd0fedf1f7.webp",
-    "assets/7b433de7-e805-475d-9184-12751e55cbb4.webp",
-    "assets/86db576d-3039-4e82-baec-675c3b9e48ce.webp",
-    "assets/ddd0ac9e-b99f-4385-9ff8-bd66fe962e2d.webp",
-    "assets/f2f98d22-ff01-4025-868e-61c88e61260b.webp",
-    "assets/img1.webp",
-    "assets/img2.webp",
     "assets/img5.webp",
-    "assets/img6.webp",
-    "assets/img7.webp",
-    "assets/img9.webp",
+    "assets/img3.webp",
   ];
   // Avoid showing the same splash photo as the previous browser session.
   const previousSplashImage = localStorage.getItem("fsar-splash-image");
