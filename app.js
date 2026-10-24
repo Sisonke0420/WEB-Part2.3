@@ -47,10 +47,23 @@ setTheme(savedTheme || (prefersDark ? "dark" : "light"));
 if (!sessionStorage.getItem("fsar-splash-shown")) {
   sessionStorage.setItem("fsar-splash-shown", "true");
 
-  const splashImages = Array.from(
-    { length: 12 },
-    (_, index) => `assets/img${index + 1}.webp`,
-  );
+  const splashImages = [
+    "assets/img1.webp",
+    "assets/img2.webp",
+    "assets/img3.webp",
+    "assets/img4.webp",
+    "assets/img7.webp",
+    "assets/img8.webp",
+    "assets/img9.webp",
+    "assets/01a11d44-3dff-7805-84d6-dbd1a8834df9.webp",
+    "assets/0730ed05-a826-48e7-b827-04d94a116dd9.webp",
+    "assets/0c654706-576b-448f-b944-b1dd0fedf1f7.webp",
+    "assets/2561c06c-457a-4f0e-bf22-1d27da4777f3.webp",
+    "assets/48a990d6-b2a4-4482-8109-9bfe2165ba18.webp",
+    "assets/7b433de7-e805-475d-9184-12751e55cbb4.webp",
+    "assets/978bc179-6991-4a57-9c80-9edee441767c.webp",
+    "assets/ddd0ac9e-b99f-4385-9ff8-bd66fe962e2d.webp",
+  ];
   const previousSplashImage = localStorage.getItem("fsar-splash-image");
   const availableSplashImages = splashImages.filter(
     (image) => image !== previousSplashImage,
