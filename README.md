@@ -63,6 +63,13 @@ The site uses semantic HTML, modern CSS styling, and a small JavaScript enhancem
 
 Open `home.html` in a browser, or use a local preview extension such as Live Server in VS Code.
 
+## Deploying to Vercel
+
+Import the repository with the project root as the Root Directory, select the
+Other framework preset, and leave the Build Command empty. The `vercel.json`
+rewrite serves `home.html` at the site root; the other `.html` pages and
+relative assets remain available as static files.
+
 ## Validation
 
 Install the development tools with `npm install`, then run `npm run validate` to
