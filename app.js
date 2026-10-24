@@ -77,11 +77,21 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
   const brandSplash = document.createElement("div");
   brandSplash.className = "brand-splash";
   brandSplash.setAttribute("aria-hidden", "true");
-  const splashImageElement = document.createElement("img");
-  splashImageElement.className = "brand-splash-image";
-  splashImageElement.src = splashImage;
-  splashImageElement.alt = "";
-  splashImageElement.fetchPriority = "high";
+  const splashImageElements = splashImages.map((image) => {
+    const imageElement = document.createElement("img");
+    imageElement.className = "brand-splash-image";
+    imageElement.src = image;
+    imageElement.alt = "";
+    imageElement.loading = image === splashImage ? "eager" : "lazy";
+    imageElement.decoding = "async";
+
+    if (image === splashImage) {
+      imageElement.classList.add("is-active");
+      imageElement.fetchPriority = "high";
+    }
+
+    return imageElement;
+  });
 
   const splashText = document.createElement("div");
   splashText.className = "brand-splash-text";
@@ -89,7 +99,7 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
   splashName.textContent = "Animal Rescue";
   splashText.append("Free State", document.createElement("br"), splashName);
 
-  brandSplash.append(splashImageElement, splashText);
+  brandSplash.append(...splashImageElements, splashText);
   document.body.append(brandSplash);
 
   window.setTimeout(

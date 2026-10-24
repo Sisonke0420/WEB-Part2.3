@@ -717,12 +717,16 @@ blockquote:focus-within cite,
   animation: splash-fade 3.6s ease forwards;
 }
 .brand-splash-image {
+  display: none;
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   animation: splash-image 3.6s ease-out forwards;
+}
+.brand-splash-image.is-active {
+  display: block;
 }
 .brand-splash-text {
   position: relative;
