@@ -48,14 +48,17 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
   sessionStorage.setItem("fsar-splash-shown", "true");
 
   const splashImages = [
-    "assets/img3.webp",
-    "assets/img4.webp",
-    "assets/img8.webp",
-    "assets/01a11d44-3dff-7805-84d6-dbd1a8834df9.webp",
-    "assets/0730ed05-a826-48e7-b827-04d94a116dd9.webp",
-    "assets/2561c06c-457a-4f0e-bf22-1d27da4777f3.webp",
-    "assets/48a990d6-b2a4-4482-8109-9bfe2165ba18.webp",
-    "assets/978bc179-6991-4a57-9c80-9edee441767c.webp",
+    "assets/0c654706-576b-448f-b944-b1dd0fedf1f7.webp",
+    "assets/7b433de7-e805-475d-9184-12751e55cbb4.webp",
+    "assets/86db576d-3039-4e82-baec-675c3b9e48ce.webp",
+    "assets/ddd0ac9e-b99f-4385-9ff8-bd66fe962e2d.webp",
+    "assets/f2f98d22-ff01-4025-868e-61c88e61260b.webp",
+    "assets/img1.webp",
+    "assets/img2.webp",
+    "assets/img5.webp",
+    "assets/img6.webp",
+    "assets/img7.webp",
+    "assets/img9.webp",
   ];
   // Avoid showing the same splash photo as the previous browser session.
   const previousSplashImage = localStorage.getItem("fsar-splash-image");
@@ -68,7 +71,7 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
     ];
   localStorage.setItem("fsar-splash-image", splashImage);
 
-  // Load only the selected, compressed photo so unused candidates cost nothing.
+  // Load only the selected photo so unused candidates cost nothing.
   const brandSplash = document.createElement("div");
   brandSplash.className = "brand-splash";
   brandSplash.setAttribute("aria-hidden", "true");
@@ -78,7 +81,7 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
   splashImageElement.alt = "";
   splashImageElement.loading = "eager";
   splashImageElement.decoding = "async";
-  splashImageElement.fetchPriority = "high";
+  splashImageElement.fetchPriority = "low";
 
   const splashText = document.createElement("div");
   splashText.className = "brand-splash-text";
@@ -89,10 +92,11 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
   brandSplash.append(splashImageElement, splashText);
   document.body.append(brandSplash);
 
-  window.setTimeout(
-    () => brandSplash.remove(),
-    prefersReducedMotion ? 600 : 3000,
-  );
+  if (prefersReducedMotion) {
+    brandSplash.remove();
+  } else {
+    window.setTimeout(() => brandSplash.remove(), 1200);
+  }
 }
 
 // Toggle between the visitor's saved theme and its opposite.

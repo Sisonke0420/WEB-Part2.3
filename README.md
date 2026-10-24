@@ -37,7 +37,8 @@ The site uses semantic HTML, modern CSS styling, and a small JavaScript enhancem
 ## Performance and security
 
 - Below-the-fold photographs use lazy loading and asynchronous decoding; the
-  homepage hero and first splash photo are prioritised.
+  homepage hero is prioritised, while the optional first-visit splash photo is
+  low priority and the intro lasts 1.2 seconds.
 - `_headers` configures a restrictive Content Security Policy and common
   browser security headers for static hosts that support the Netlify/Cloudflare
   Pages `_headers` format. Confirm the deployed response headers with the host.
