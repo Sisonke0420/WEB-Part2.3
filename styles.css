@@ -809,6 +809,25 @@ blockquote:focus-within cite,
   opacity: 1;
   transform: translateY(0);
 }
+.text-reveal {
+  opacity: 0;
+  filter: blur(4px);
+  transition:
+    opacity 0.65s ease,
+    filter 0.65s ease;
+}
+.text-reveal:is(h1, h2, h3, h4, h5, h6, p, blockquote, li) {
+  transform: translateY(16px);
+  transition:
+    opacity 0.65s ease,
+    filter 0.65s ease,
+    transform 0.65s ease;
+}
+.text-reveal.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -816,6 +835,13 @@ blockquote:focus-within cite,
   .reveal,
   .reveal.is-visible {
     opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .text-reveal,
+  .text-reveal.is-visible {
+    opacity: 1;
+    filter: none;
     transform: none;
     transition: none;
   }

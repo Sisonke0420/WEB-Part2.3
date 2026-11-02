@@ -117,17 +117,31 @@ setInterval(() => {
   showSlide(currentSlide + 1);
 }, 5000);
 
-// Reveal sections as they enter view, then unobserve them to avoid repeat work.
-const revealObserver = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 },
+// Reveal text as it enters view without adding nested animations.
+const textSelector =
+  "main :is(h1, h2, h3, h4, h5, h6, p, blockquote, cite, a, button, span, strong, li), footer :is(p, a, span)";
+const textItems = [...document.querySelectorAll(textSelector)].filter(
+  (item) => !item.parentElement.closest(textSelector),
 );
 
-revealItems.forEach((item) => revealObserver.observe(item));
+if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+  textItems.forEach((item) => {
+    item.classList.add("text-reveal");
+    revealObserver.observe(item);
+  });
+}
