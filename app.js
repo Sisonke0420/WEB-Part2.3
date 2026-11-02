@@ -151,6 +151,19 @@ function showSlide(index) {
   const lightbox = document.querySelector(".lightbox");
 
   if (lightbox && galleryTriggers.length) {
+    const galleryGrid = document.querySelector(".gallery-grid");
+    const shuffledItems = [...galleryGrid.children];
+
+    for (let index = shuffledItems.length - 1; index > 0; index -= 1) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      [shuffledItems[index], shuffledItems[randomIndex]] = [
+        shuffledItems[randomIndex],
+        shuffledItems[index],
+      ];
+    }
+
+    shuffledItems.forEach((item) => galleryGrid.append(item));
+
     const lightboxImage = lightbox.querySelector(".lightbox-image");
     const lightboxCaption = lightbox.querySelector(".lightbox-caption");
     const lightboxPosition = lightbox.querySelector(".lightbox-position");
@@ -231,8 +244,8 @@ if (!sessionStorage.getItem("fsar-splash-shown")) {
   sessionStorage.setItem("fsar-splash-shown", "true");
 
   const splashImages = [
-    "assets/img5.webp",
-    "assets/img3.webp",
+    "assets/img1.webp",
+    "assets/img2.webp",
   ];
   // Avoid showing the same splash photo as the previous browser session.
   const previousSplashImage = localStorage.getItem("fsar-splash-image");
