@@ -87,6 +87,83 @@
         </p>
       </div>
 
+      <section class="contact-form-section" aria-labelledby="form-heading">
+        <div class="contact-form-header">
+          <p class="eyebrow">Send an enquiry</p>
+          <h2 id="form-heading">How may we help?</h2>
+          <p>
+            All fields are required. The form checks your details in this
+            browser but does not send messages. Please email us directly.
+          </p>
+        </div>
+        <form class="contact-form" novalidate>
+          <div class="form-field">
+            <label for="contact-name">Full name</label>
+            <input
+              id="contact-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              minlength="2"
+              maxlength="80"
+              required
+              aria-describedby="contact-name-error"
+            />
+            <span class="field-error" id="contact-name-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="contact-email">Email address</label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              maxlength="254"
+              required
+              aria-describedby="contact-email-error"
+            />
+            <span class="field-error" id="contact-email-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="contact-subject">Enquiry type</label>
+            <select
+              id="contact-subject"
+              name="subject"
+              required
+              aria-describedby="contact-subject-error"
+            >
+              <option value="">Select an enquiry type</option>
+              <option value="Adoption">Adoption</option>
+              <option value="Fostering">Fostering</option>
+              <option value="Volunteering">Volunteering</option>
+              <option value="Donations">Donations and supplies</option>
+              <option value="Other">Other enquiry</option>
+            </select>
+            <span class="field-error" id="contact-subject-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field form-field-message">
+            <label for="contact-message">Message</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows="6"
+              minlength="20"
+              maxlength="2000"
+              required
+              aria-describedby="contact-message-hint contact-message-error"
+            ></textarea>
+            <span class="field-hint" id="contact-message-hint">Minimum 20 characters.</span>
+            <span class="field-error" id="contact-message-error" aria-live="polite"></span>
+          </div>
+          <div class="form-submit">
+            <button class="button button-primary" type="submit">
+              Check details <span aria-hidden="true">→</span>
+            </button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
       <section class="contact-map" aria-labelledby="map-heading">
         <div class="contact-map-header">
           <div>

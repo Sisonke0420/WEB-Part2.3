@@ -21,6 +21,7 @@ The site uses semantic HTML, modern CSS styling, and JavaScript enhancements for
 - Dark/light theme toggle
 - Scroll-triggered text and section reveals that respect reduced-motion preferences
 - Rotating adoption-story carousel
+- Responsive photo gallery with an accessible image lightbox
 - Interactive contact-page map with directions
 - Google Fonts typography
 - Story, service, testimonial, and contact sections

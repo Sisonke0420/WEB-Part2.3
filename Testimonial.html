@@ -181,6 +181,114 @@
         </div>
       </section>
 
+      <section class="photo-gallery" aria-labelledby="gallery-heading">
+        <div class="gallery-header">
+          <div>
+            <p class="eyebrow">Moments of care</p>
+            <h2 id="gallery-heading">Life at the rescue</h2>
+          </div>
+          <p>Browse the gallery and select a photo to view it in detail.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <button
+              class="gallery-trigger"
+              type="button"
+              aria-label="View larger image: A dog receiving a bath"
+            >
+              <img
+                src="assets/img1.webp"
+                alt="A dog receiving a bath from a caregiver"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="gallery-zoom" aria-hidden="true">+</span>
+            </button>
+            <figcaption>Gentle, attentive care</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button
+              class="gallery-trigger"
+              type="button"
+              aria-label="View larger image: A dog and cat together"
+            >
+              <img
+                src="assets/img2.webp"
+                alt="A dog resting behind an orange cat"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="gallery-zoom" aria-hidden="true">+</span>
+            </button>
+            <figcaption>Companionship and comfort</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button
+              class="gallery-trigger"
+              type="button"
+              aria-label="View larger image: A veterinarian examining a puppy"
+            >
+              <img
+                src="assets/0c654706-576b-448f-b944-b1dd0fedf1f7.webp"
+                alt="A veterinarian examining a puppy"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="gallery-zoom" aria-hidden="true">+</span>
+            </button>
+            <figcaption>Veterinary care</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button
+              class="gallery-trigger"
+              type="button"
+              aria-label="View larger image: A woman spending time with a pug"
+            >
+              <img
+                src="assets/2561c06c-457a-4f0e-bf22-1d27da4777f3.webp"
+                alt="A woman gently playing with a pug"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="gallery-zoom" aria-hidden="true">+</span>
+            </button>
+            <figcaption>Building trust through play</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button
+              class="gallery-trigger"
+              type="button"
+              aria-label="View larger image: A kitten relaxing at home"
+            >
+              <img
+                src="assets/img5.webp"
+                alt="An orange kitten relaxing indoors"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="gallery-zoom" aria-hidden="true">+</span>
+            </button>
+            <figcaption>A calm place to rest</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button
+              class="gallery-trigger"
+              type="button"
+              aria-label="View larger image: A woman hugging a dog"
+            >
+              <img
+                src="assets/978bc179-6991-4a57-9c80-9edee441767c.webp"
+                alt="A woman hugging a happy dog"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="gallery-zoom" aria-hidden="true">+</span>
+            </button>
+            <figcaption>The bond of adoption</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="info-grid" aria-label="Adoption and foster outcomes">
         <article class="mini-card">
           <span class="feature-tag">Adoption</span>
@@ -208,6 +316,47 @@
         </article>
       </section>
     </main>
+    <dialog
+      class="lightbox"
+      aria-labelledby="lightbox-caption"
+      aria-describedby="lightbox-position"
+    >
+      <div class="lightbox-content">
+        <div class="lightbox-toolbar">
+          <p id="lightbox-position" class="lightbox-position" aria-live="polite"></p>
+          <button
+            class="lightbox-close"
+            type="button"
+            aria-label="Close image viewer"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="lightbox-stage">
+          <button
+            class="lightbox-nav lightbox-previous"
+            type="button"
+            aria-label="Previous image"
+          >
+            &#8592;
+          </button>
+          <img
+            class="lightbox-image"
+            src="assets/img1.webp"
+            alt=""
+            decoding="async"
+          />
+          <button
+            class="lightbox-nav lightbox-next"
+            type="button"
+            aria-label="Next image"
+          >
+            &#8594;
+          </button>
+        </div>
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+      </div>
+    </dialog>
     <footer class="footer page-wrap">
       <span>Free State Animal Rescue</span
       ><span>Serving Bloemfontein and the Free State</span>
