@@ -9,7 +9,7 @@ This project includes a landing page and supporting pages for:
 - Home
 - Our story
 - How to help
-- Happy tails
+- Adoption stories
 - Contact
 
 The site uses semantic HTML, modern CSS styling, and JavaScript enhancements for the theme toggle, mobile navigation, story carousel, and scroll reveals.
@@ -21,6 +21,7 @@ The site uses semantic HTML, modern CSS styling, and JavaScript enhancements for
 - Dark/light theme toggle
 - Scroll-triggered text and section reveals that respect reduced-motion preferences
 - Rotating adoption-story carousel
+- Interactive contact-page map with directions
 - Google Fonts typography
 - Story, service, testimonial, and contact sections
 - Simple content-focused design for a non-profit animal rescue brand
@@ -30,9 +31,9 @@ The site uses semantic HTML, modern CSS styling, and JavaScript enhancements for
 - Each page has a unique title and meta description, plus Open Graph and
   summary-card metadata for social sharing.
 - The document language is set to South African English (`en-ZA`).
-- Replace `example.com` in `robots.txt` and `sitemap.xml` with the production
-  domain before deployment. Publish both files at the site root, then submit
-  the sitemap in Google Search Console.
+- `robots.txt` and `sitemap.xml` use `https://fsar.vercel.app`; update them if
+  the production domain changes. Publish both files at the site root, then
+  submit the sitemap in Google Search Console.
 - Replace fictional organisation details, statistics, and stories with
   verified information before publishing.
 
