@@ -4,7 +4,7 @@
 
 1. Google Fonts  
    https://fonts.google.com/
-   - Used for the Fraunces and Red Hat Display typefaces.
+   - Used for the DM Sans and Manrope typefaces.
 
 2. MDN Web Docs — CSS  
    https://developer.mozilla.org/en-US/docs/Web/CSS

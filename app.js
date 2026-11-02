@@ -112,10 +112,15 @@ carouselButtons.forEach((button) => {
   });
 });
 
-// Automatically advance stories every five seconds.
-setInterval(() => {
-  showSlide(currentSlide + 1);
-}, 5000);
+// Rotate stories only when a carousel is present and motion is allowed.
+const storyCarousel = document.querySelector(".story-carousel");
+if (storyCarousel && carouselSlides.length && !prefersReducedMotion) {
+  setInterval(() => {
+    if (!document.hidden && !storyCarousel.matches(":hover, :focus-within")) {
+      showSlide(currentSlide + 1);
+    }
+  }, 5000);
+}
 
 // Reveal text as it enters view without adding nested animations.
 const textSelector =

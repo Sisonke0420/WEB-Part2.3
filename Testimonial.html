@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-nav">
       <a class="brand" href="home.html"
         ><span class="brand-mark">FS</span
@@ -53,7 +54,8 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="home.html">Home</a><a href="about.html">Our story</a
         ><a href="services.html">How to help</a
-        ><a class="active" href="Testimonial.html">Happy tails</a
+        ><a class="active" href="Testimonial.html" aria-current="page"
+          >Happy tails</a
         ><a href="contact.html">Contact</a>
       </nav>
       <button
@@ -66,7 +68,7 @@
         ><span class="theme-label">Dark mode</span>
       </button>
     </header>
-    <main class="page-wrap inner-page reveal">
+    <main id="main-content" class="page-wrap inner-page reveal">
       <p class="eyebrow">The best part of the work</p>
       <h1 class="inner-title">
         Love stories with<br /><em>four good feet.</em>
